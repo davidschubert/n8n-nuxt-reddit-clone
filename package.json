@@ -1,0 +1,30 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "version": "1.0.0",
+  "description": "A Reddit clone built with Nuxt.js, n8n workflows, and Appwrite backend",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "db:setup": "node scripts/setup-database.js",
+    "db:migrate": "node scripts/migrate-database.js",
+    "db:test": "node scripts/test-performance.js"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.0.0",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@types/node": "^20.19.0",
+    "eslint": "^8.57.0",
+    "nuxt": "^3.13.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "appwrite": "^13.0.0",
+    "@nuxtjs/tailwindcss": "^6.8.4"
+  }
+}
