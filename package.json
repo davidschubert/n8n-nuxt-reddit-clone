@@ -1,0 +1,37 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "private": true,
+  "type": "module",
+  "description": "Reddit-ähnliches Kommentarsystem mit Nuxt 4 & Appwrite",
+  "author": "David Schubert",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "echo 'ESLint wird später hinzugefügt'",
+    "lint:fix": "echo 'ESLint wird später hinzugefügt'",
+    "typecheck": "nuxt typecheck",
+    "setup:env": "cp .env.example .env",
+    "setup:db": "node scripts/setup-database.js",
+    "setup": "npm run setup:env && echo 'Bitte .env konfigurieren, dann: npm run setup:db'"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^3.2.3",
+    "@pinia/nuxt": "^0.7.0",
+    "@vueuse/core": "^12.0.1",
+    "@vueuse/nuxt": "^12.0.1",
+    "appwrite": "^18.2.0",
+    "nuxt": "^4.0.1",
+    "pinia": "^2.2.8",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2"
+  }
+}
