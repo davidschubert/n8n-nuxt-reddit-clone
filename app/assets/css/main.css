@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the voting system */
+.vote-button {
+  @apply p-2 rounded-lg transition-all duration-200 hover:bg-gray-100;
+}
+
+.vote-button.active {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.vote-button.upvote.active {
+  @apply bg-orange-100 text-orange-600;
+}
+
+.vote-button.downvote.active {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.comment-card {
+  @apply bg-white border border-gray-200 rounded-lg p-4 mb-4 shadow-sm;
+}
