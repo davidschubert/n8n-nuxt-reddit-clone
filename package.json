@@ -1,0 +1,30 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "version": "1.0.0",
+  "description": "A Reddit clone built with Nuxt.js and Appwrite",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "setup:appwrite": "node scripts/setup-appwrite.js"
+  },
+  "keywords": [
+    "nuxt",
+    "reddit",
+    "appwrite",
+    "clone"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "appwrite": "^16.0.2",
+    "nuxt": "^3.13.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^3.0.1",
+    "dotenv": "^17.2.1"
+  }
+}
