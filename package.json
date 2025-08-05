@@ -1,0 +1,67 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "version": "1.0.0",
+  "description": "A modern Reddit clone built with Nuxt.js 4 and Appwrite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "security:audit": "npm audit --audit-level=moderate",
+    "docker:build": "docker build -t n8n-nuxt-reddit-clone .",
+    "docker:run": "docker run -p 3000:3000 n8n-nuxt-reddit-clone"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.5",
+    "appwrite": "^16.0.2",
+    "nuxt": "^3.14.159",
+    "pinia": "^2.2.6",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.7.4",
+    "@nuxt/test-utils": "^3.14.4",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.8.7",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vitest/ui": "^2.1.8",
+    "eslint": "^9.15.0",
+    "happy-dom": "^15.11.6",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidschubert/n8n-nuxt-reddit-clone.git"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "reddit",
+    "clone",
+    "appwrite",
+    "tailwindcss",
+    "typescript"
+  ],
+  "author": "David Schubert",
+  "license": "MIT"
+}
