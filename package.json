@@ -1,0 +1,29 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.18.7",
+    "@vueuse/core": "^11.3.0",
+    "@vueuse/nuxt": "^11.3.0",
+    "nuxt": "^3.13.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1",
+    "vue-tsc": "^3.0.5"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.5.7",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://n8n-nuxt-reddit-clone.vercel.app/sitemap.xml
