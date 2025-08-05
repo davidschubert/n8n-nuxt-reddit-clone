@@ -1,0 +1,25 @@
+{
+  "name": "n8n-nuxt-reddit-clone",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A Reddit clone built with Nuxt.js",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue,.ts .",
+    "lint:fix": "eslint --ext .js,.vue,.ts . --fix"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.18.4",
+    "nuxt": "^3.12.4",
+    "vue": "^3.4.34"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.5.0",
+    "@types/node": "^20.14.12",
+    "eslint": "^9.8.0",
+    "typescript": "^5.5.4"
+  }
+}
