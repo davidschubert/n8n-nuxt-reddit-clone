@@ -33,4 +33,5 @@ export { useAppwrite, ConnectionState, RealtimeSubscription } from '../composabl
 export { useComments, Comment, CommentVote } from '../composables/useComments';
 export { useNotifications, Notification } from '../composables/useNotifications';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
+export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
