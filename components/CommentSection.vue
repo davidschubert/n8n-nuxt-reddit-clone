@@ -112,11 +112,13 @@ const {
   error,
   currentSort,
   fetchComments,
-  sortComments
+  sortComments,
+  subscribeToComments
 } = useComments()
 
 const selectedSort = ref<CommentSort>(COMMENT_SORTS[0])
 const hasMore = ref(false) // For future pagination
+let unsubscribeRealtime: (() => void) | null = null
 
 const totalComments = computed(() => {
   const countComments = (comments: Comment[]): number => {
@@ -153,12 +155,29 @@ const loadMore = () => {
 // Initialize on mount
 onMounted(() => {
   fetchComments(props.postId)
+  
+  // Start real-time subscription
+  unsubscribeRealtime = subscribeToComments(props.postId)
+})
+
+// Cleanup on unmount
+onUnmounted(() => {
+  if (unsubscribeRealtime) {
+    unsubscribeRealtime()
+  }
 })
 
 // Watch for post ID changes
 watch(() => props.postId, (newPostId) => {
   if (newPostId) {
+    // Cleanup previous subscription
+    if (unsubscribeRealtime) {
+      unsubscribeRealtime()
+    }
+    
+    // Fetch new comments and start new subscription
     fetchComments(newPostId)
+    unsubscribeRealtime = subscribeToComments(newPostId)
   }
 })
 </script>

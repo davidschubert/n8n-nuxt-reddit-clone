@@ -233,11 +233,57 @@ export const useComments = () => {
   }
 
   const subscribeToComments = (postId: string) => {
-    // TODO: Implement real-time subscription using Appwrite realtime
-    // This would listen for changes to comments collection
-    return () => {
-      // Cleanup subscription
-    }
+    // Real-time subscription using Appwrite realtime
+    const unsubscribe = $appwrite.client.subscribe(
+      [
+        `databases.${config.public.appwriteDatabaseId}.collections.${config.public.appwriteCommentsCollectionId}.documents`,
+        `databases.${config.public.appwriteDatabaseId}.collections.${config.public.appwriteVotesCollectionId}.documents`
+      ],
+      (response: any) => {
+        console.log('Real-time update:', response)
+        
+        // Handle comment events
+        if (response.channels.includes(`databases.${config.public.appwriteDatabaseId}.collections.${config.public.appwriteCommentsCollectionId}.documents`)) {
+          const comment = response.payload as Comment
+          
+          if (comment.postId === postId) {
+            if (response.events.includes('databases.*.collections.*.documents.*.create')) {
+              // New comment created - refresh to get updated tree
+              fetchComments(postId)
+            } else if (response.events.includes('databases.*.collections.*.documents.*.update')) {
+              // Comment updated (vote counts changed) - update local state
+              const updateCommentInTree = (comments: Comment[]): void => {
+                comments.forEach(c => {
+                  if (c.$id === comment.$id) {
+                    c.upvotes = comment.upvotes
+                    c.downvotes = comment.downvotes
+                    c.score = comment.score
+                  }
+                  if (c.replies) {
+                    updateCommentInTree(c.replies)
+                  }
+                })
+              }
+              updateCommentInTree(comments.value)
+            }
+          }
+        }
+        
+        // Handle vote events
+        if (response.channels.includes(`databases.${config.public.appwriteDatabaseId}.collections.${config.public.appwriteVotesCollectionId}.documents`)) {
+          const vote = response.payload as Vote
+          
+          // Refresh comment scores when votes change
+          if (response.events.includes('databases.*.collections.*.documents.*.create') ||
+              response.events.includes('databases.*.collections.*.documents.*.delete')) {
+            // Vote added or removed - will trigger comment update via database triggers in production
+            console.log('Vote change detected for comment:', vote.commentId)
+          }
+        }
+      }
+    )
+
+    return unsubscribe
   }
 
   return {
