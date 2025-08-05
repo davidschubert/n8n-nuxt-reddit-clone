@@ -26,11 +26,7 @@
               class="flex items-center space-x-2 text-xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
               aria-label="N8N Reddit Clone - Home"
             >
-              <UIcon
-                name="i-heroicons-chat-bubble-left-right"
-                class="w-8 h-8"
-                aria-hidden="true"
-              />
+              <span class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">N</span>
               <span>N8N Reddit</span>
             </NuxtLink>
           </div>
@@ -47,11 +43,7 @@
                 aria-describedby="search-description"
               >
               <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <UIcon
-                  name="i-heroicons-magnifying-glass"
-                  class="w-5 h-5 text-gray-400"
-                  aria-hidden="true"
-                />
+                <span class="text-gray-400">🔍</span>
               </div>
               <div id="search-description" class="sr-only">
                 Search through all posts and comments
@@ -62,54 +54,32 @@
           <!-- User actions -->
           <div class="flex items-center space-x-4">
             <!-- Theme toggle -->
-            <UButton
-              color="gray"
-              variant="ghost"
-              size="sm"
+            <button
+              class="p-2 rounded-md text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
               @click="toggleColorMode"
-              :aria-label="`Switch to ${$colorMode.preference === 'dark' ? 'light' : 'dark'} mode`"
+              aria-label="Toggle theme"
             >
-              <UIcon
-                :name="$colorMode.preference === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-                class="w-5 h-5"
-                aria-hidden="true"
-              />
-            </UButton>
+              <span class="text-lg">🌙</span>
+            </button>
 
             <!-- Create post button -->
-            <UButton color="primary">
-              <UIcon
-                name="i-heroicons-plus"
-                class="w-4 h-4 mr-2"
-                aria-hidden="true"
-              />
+            <button class="btn btn-primary">
+              <span class="mr-2">+</span>
               Create Post
-            </UButton>
+            </button>
 
             <!-- User menu -->
-            <UDropdown
-              :items="userMenuItems"
-              :popper="{ placement: 'bottom-end' }"
-            >
-              <UButton
-                color="gray"
-                variant="ghost"
-                size="sm"
-                class="flex items-center space-x-2"
+            <div class="relative">
+              <button
+                class="flex items-center space-x-2 p-2 rounded-md text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
                 aria-label="User menu"
               >
-                <UAvatar
-                  size="sm"
-                  alt="User avatar"
-                  src="/placeholder-avatar.png"
-                />
-                <UIcon
-                  name="i-heroicons-chevron-down"
-                  class="w-4 h-4"
-                  aria-hidden="true"
-                />
-              </UButton>
-            </UDropdown>
+                <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                  <span class="text-sm font-medium">U</span>
+                </div>
+                <span>▼</span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>

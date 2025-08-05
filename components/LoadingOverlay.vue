@@ -68,15 +68,19 @@ const { loading } = useUXState()
 
 // Prevent body scroll when loading overlay is active
 watchEffect(() => {
-  if (loading.value.isLoading) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
+  if (import.meta.client) {
+    if (loading.value.isLoading) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
   }
 })
 
 // Cleanup on unmount
 onUnmounted(() => {
-  document.body.style.overflow = ''
+  if (import.meta.client) {
+    document.body.style.overflow = ''
+  }
 })
 </script>

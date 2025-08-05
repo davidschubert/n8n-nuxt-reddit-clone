@@ -7,11 +7,7 @@
   >
     <!-- Error icon -->
     <div class="flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full mb-4">
-      <UIcon
-        name="i-heroicons-exclamation-triangle"
-        class="w-8 h-8 text-red-600 dark:text-red-400"
-        aria-hidden="true"
-      />
+      <span class="text-2xl" aria-hidden="true">⚠️</span>
     </div>
 
     <!-- Error message -->
@@ -33,28 +29,22 @@
 
     <!-- Action buttons -->
     <div class="flex flex-col sm:flex-row gap-3">
-      <UButton
+      <button
         v-if="error.retry"
-        color="primary"
+        class="btn btn-primary"
         @click="handleRetry"
       >
-        <UIcon
-          name="i-heroicons-arrow-path"
-          class="w-4 h-4 mr-2"
-        />
+        <span class="mr-2">🔄</span>
         Try Again
-      </UButton>
+      </button>
       
-      <UButton
-        color="white"
-        @click="clearError"
+      <button
+        class="btn btn-secondary"
+        @click="goHome"
       >
-        <UIcon
-          name="i-heroicons-home"
-          class="w-4 h-4 mr-2"
-        />
+        <span class="mr-2">🏠</span>
         Go Home
-      </UButton>
+      </button>
     </div>
 
     <!-- Additional help -->

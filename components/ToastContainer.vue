@@ -24,11 +24,12 @@
         >
           <!-- Icon -->
           <div class="flex-shrink-0 mr-3">
-            <UIcon
-              :name="toastIcons[toast.type]"
-              :class="['h-5 w-5', toastIconClasses[toast.type]]"
+            <span
+              :class="['text-lg', toastIconClasses[toast.type]]"
               :aria-hidden="true"
-            />
+            >
+              {{ toastIcons[toast.type] }}
+            </span>
           </div>
 
           <!-- Content -->
@@ -53,11 +54,12 @@
             :aria-label="`Close ${toast.type} notification`"
             @click="removeToast(toast.id)"
           >
-            <UIcon
-              name="i-heroicons-x-mark"
-              class="h-4 w-4"
+            <span
+              class="text-lg"
               aria-hidden="true"
-            />
+            >
+              ✕
+            </span>
           </button>
 
           <!-- Progress bar for timed toasts -->
@@ -84,10 +86,10 @@ const toastClasses = {
 }
 
 const toastIcons = {
-  success: 'i-heroicons-check-circle',
-  error: 'i-heroicons-x-circle',
-  warning: 'i-heroicons-exclamation-triangle',
-  info: 'i-heroicons-information-circle'
+  success: '✅',
+  error: '❌',
+  warning: '⚠️',
+  info: 'ℹ️'
 }
 
 const toastIconClasses = {

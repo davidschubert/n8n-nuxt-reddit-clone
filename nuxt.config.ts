@@ -7,8 +7,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/eslint'
+    '@nuxtjs/tailwindcss'
   ],
 
   // SEO and Meta configuration
@@ -64,7 +63,7 @@ export default defineNuxtConfig({
   // Accessibility and UX features
   ui: {
     global: true,
-    icons: ['heroicons', 'lucide']
+    icons: ['heroicons']
   },
 
   // TypeScript configuration
@@ -72,17 +71,8 @@ export default defineNuxtConfig({
     typeCheck: false
   },
 
-  // Experimental features for better performance
-  experimental: {
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true
-  },
-
   // Route rules for SEO
   routeRules: {
-    '/': { prerender: true },
-    '/posts/**': { ssr: true },
-    '/api/**': { cors: true }
+    '/': { prerender: true }
   }
 })

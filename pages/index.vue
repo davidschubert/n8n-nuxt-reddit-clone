@@ -24,23 +24,18 @@
         <div class="space-y-2">
           <h3 class="font-medium text-gray-900 dark:text-gray-100">Loading States</h3>
           <div class="space-y-2">
-            <UButton
-              color="blue"
-              size="sm"
-              block
+            <button
+              class="btn btn-primary w-full text-sm"
               @click="demoLoading"
             >
               Test Loading Overlay
-            </UButton>
-            <UButton
-              color="blue"
-              size="sm"
-              variant="outline"
-              block
+            </button>
+            <button
+              class="btn btn-secondary w-full text-sm"
               @click="demoProgressLoading"
             >
               Test Progress Loading
-            </UButton>
+            </button>
           </div>
         </div>
 
@@ -48,38 +43,30 @@
         <div class="space-y-2">
           <h3 class="font-medium text-gray-900 dark:text-gray-100">Toast Messages</h3>
           <div class="space-y-2">
-            <UButton
-              color="green"
-              size="sm"
-              block
+            <button
+              class="w-full px-3 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
               @click="demoSuccessToast"
             >
               Success Toast
-            </UButton>
-            <UButton
-              color="red"
-              size="sm"
-              block
+            </button>
+            <button
+              class="w-full px-3 py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
               @click="demoErrorToast"
             >
               Error Toast
-            </UButton>
-            <UButton
-              color="yellow"
-              size="sm"
-              block
+            </button>
+            <button
+              class="w-full px-3 py-2 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors"
               @click="demoWarningToast"
             >
               Warning Toast
-            </UButton>
-            <UButton
-              color="blue"
-              size="sm"
-              block
+            </button>
+            <button
+              class="w-full px-3 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
               @click="demoInfoToast"
             >
               Info Toast
-            </UButton>
+            </button>
           </div>
         </div>
 
@@ -87,24 +74,18 @@
         <div class="space-y-2">
           <h3 class="font-medium text-gray-900 dark:text-gray-100">Error States</h3>
           <div class="space-y-2">
-            <UButton
-              color="red"
-              size="sm"
-              variant="outline"
-              block
+            <button
+              class="btn btn-secondary w-full text-sm border-red-300 text-red-700 hover:bg-red-50"
               @click="demoError"
             >
               Test Error State
-            </UButton>
-            <UButton
-              color="red"
-              size="sm"
-              variant="ghost"
-              block
+            </button>
+            <button
+              class="btn btn-secondary w-full text-sm border-red-300 text-red-700 hover:bg-red-50"
               @click="demoRetryableError"
             >
               Test Retryable Error
-            </UButton>
+            </button>
           </div>
         </div>
       </div>
@@ -177,7 +158,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 // Page metadata
 useHead({
   title: 'Home - N8N Reddit Clone',
